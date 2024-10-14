@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 600vh;
+}
+
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fHww");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  transition: background-image 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  filter: blur(0px);
+  z-index: 0;
+}
+
+.box h2 {
+  font-size: 2.5em; /* Increased size for better visibility */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
+  transition: color 0.5s;
+}
+
+.box p {
+  color: rgba(255, 255, 255, 0.9); /* Slightly brighter for better contrast */
+  font-size: 1.5em; /* Increased size for better visibility */
+  padding: 20px;
+  transition: color 0.5s;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+.scroll-indicator {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  z-index: 2; /* Ensure it appears above the background */
+}
+
+.scroll-indicator-fill {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Darker overlay for better text visibility */
+  z-index: 1;
+  transition: opacity 0.5s;
+  pointer-events: none; /* Ensures the overlay does not interfere with clicks */
+}
+
+/* Optional: Hover effect for text */
+.box:hover h2,
+.box:hover p {
+  color: rgba(255, 255, 255, 0.9); /* Brighter on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
